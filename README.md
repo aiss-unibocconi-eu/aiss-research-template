@@ -7,7 +7,7 @@
 > 3. Run `uv sync` to install the Python environment ([install uv](https://docs.astral.sh/uv/getting-started/installation/) first if needed).
 > 4. Run `uv run python run.py`. It checks your setup and tells you what is missing.
 >
-> Then fill in the sections below and the *Project specifics* part of `AGENTS.md`.
+> Then fill in the sections below, the *Project specifics* part of `AGENTS.md`, and `data/codebook.md`.
 
 ## Question
 
@@ -27,6 +27,7 @@ To run part of the pipeline: `uv run python run.py build` runs only the steps wh
 
 Data never goes into Git. It lives on lab storage, and each machine sets its location as `DATA_DIR` in `.env`.
 Every source is documented in [`data/README.md`](data/README.md): origin, date, who downloaded it, licence.
+Every variable in the clean data is defined in [`data/codebook.md`](data/codebook.md).
 
 ## Structure
 
@@ -38,7 +39,9 @@ pyproject.toml   Python packages requested    ─┐ changed only
 uv.lock          exact versions installed      ─┘ through uv
 .env.example     secrets and machine paths the project needs, without values
 
-data/            ignored by Git, except data/README.md
+data/            ignored by Git, except the two files below
+  README.md      where every dataset came from
+  codebook.md    every variable in data/clean: label, unit, definition
   raw/           as received: never edited, never overwritten
   llm_cache/     prompts and raw model responses: written once, never deleted
   interim/       working files, rebuildable
@@ -72,4 +75,4 @@ scratch/         your sandbox, ignored; nothing may depend on it
 | RA | [name] |
 
 ---
-<sub>Built from the [AISS research template](https://github.com/aiss-unibocconi-eu/research-template) · AI in Social Sciences Lab, Bocconi University</sub>
+<sub>Built from the [AISS research template](https://github.com/aiss-unibocconi-eu/aiss-research-template) · AI in Social Sciences Lab, Bocconi University</sub>

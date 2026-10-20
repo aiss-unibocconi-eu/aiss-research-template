@@ -7,6 +7,7 @@ This is a research project built on the AISS lab template. Follow these rules ex
 - `data/raw/` and `data/llm_cache/` are read-only. Never edit, overwrite, move or delete anything in them.
 - Data moves one way: raw → interim → clean. Scripts in `code/01_build/` read raw data and write to `data/interim/` and `data/clean/`. Scripts in `code/02_analysis/` read only `data/clean/` and write only to `output/`.
 - A new data source gets an entry in `data/README.md` before any code uses it.
+- Variables in `data/clean/` are defined in `data/codebook.md`. Read it before creating, renaming or interpreting a variable, and update its row in the same commit.
 
 ## Paths and environment
 
@@ -28,7 +29,7 @@ This is a research project built on the AISS lab template. Follow these rules ex
 
 ## Working with Git
 
-- Work on a branch, never directly on `main`. Commit small, working steps with a message saying what changed and why.
+- Work on a branch named `type/task`, where type is `data`, `analysis`, `paper` or `fix` (e.g. `data/merge-counties`); never directly on `main`. Commit small, working steps with a message saying what changed and why.
 - Run `uv run python run.py` (or the affected steps) before saying a task is done.
 
 ## When to stop and ask

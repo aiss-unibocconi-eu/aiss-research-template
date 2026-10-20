@@ -1,9 +1,10 @@
 # Secrets and machine-specific settings
 .env
 
-# Data never goes into Git; data/README.md is the one exception
+# Data never goes into Git; the two documentation files are the exceptions
 data/*
 !data/README.md
+!data/codebook.md
 
 # Rebuildable or personal
 output/logs/*

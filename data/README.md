@@ -1,6 +1,6 @@
 # Data sources
 
-Every dataset the project uses has an entry here **before** any code reads it. This is the only file in `data/` that Git tracks.
+Every dataset the project uses has an entry here **before** any code reads it. Together with `codebook.md`, it is one of the two files in `data/` that Git tracks.
 
 Rules for `raw/`: files stay exactly as received. Never edit them, never re-save them from Excel, never overwrite them. A new download gets a new file with the date in its name, e.g. `census_1900_2026-10-20.csv`.
 
