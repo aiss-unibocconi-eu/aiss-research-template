@@ -1,0 +1,9 @@
+[project]
+name = "research-project"
+version = "0.1.0"
+description = "AISS lab research project"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false
