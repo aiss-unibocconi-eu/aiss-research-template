@@ -24,7 +24,7 @@ uv run python run.py       # every script, in order: raw data in, tables and fig
 ```
 
 `run.py` lists every script in the order it runs, Python and Stata alike. Stata scripts need `STATA_PATH` in `.env`.
-To run part of the pipeline: `uv run python run.py build` runs only the steps whose path contains "build".
+To run part of the pipeline, add part of a script's path: `uv run python run.py build` runs every build step, and `uv run python run.py 01_import` runs just that script. Always start Python scripts this way: started directly, they stop with `No module named 'lib'`.
 
 ## Data
 
@@ -54,7 +54,7 @@ code/
   00_setup.do    Stata settings; every do-file runs it first
   01_build/      raw → clean (no estimation)
   02_analysis/   clean → output (reads only data/clean)
-  lib/           shared Python functions, including paths.py
+  lib/           shared Python functions, including paths.py and settings.py (the seed)
   ado/           project-local Stata packages, committed
 
 output/          written by code only, never by hand
